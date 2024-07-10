@@ -1,0 +1,32 @@
+/* Подключение шрифтоф */
+@font-face {
+    font-family: Panton;
+    font-weight: 400; /* Соответствует значению normal */
+    src: url('../fonts/Panton-Regular.ttf');
+}
+
+@font-face {
+    font-family: Panton;
+    font-weight: 500; /* Соответствует значению bold */
+    src: url('../fonts/Panton-SemiBold.ttf');
+}
+
+@font-face {
+    font-family: Panton;
+    font-weight: 600; /* Соответствует значению bold */
+    src: url('../fonts/Panton-Bold.ttf');
+}
+
+@font-face {
+    font-family: Panton;
+    font-weight: 900; /* Соответствует значению bold */
+    src: url('../fonts/Panton-Black.ttf');
+}
+
+* {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}

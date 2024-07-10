@@ -1,0 +1,41 @@
+.block {
+    position: fixed;
+
+    margin: 0.5rem auto;
+    padding: 0.5rem;
+
+    border: 1px solid var(--bg);
+    border-radius: 4px;
+    outline: none;
+    background: var(--bg-d);
+}
+
+.anchor {
+    position: relative;
+
+    display: block;
+
+    cursor: pointer;
+    transition: none;
+
+    color: var(--white);
+
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.anchor:focus {
+    color: var(--white);
+}
+
+.anchor:active {
+    color: var(--red);
+}
+
+@media (min-width: 768px) {
+    .block {
+        display: none;
+
+        pointer-events: none;
+    }
+}

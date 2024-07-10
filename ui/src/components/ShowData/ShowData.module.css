@@ -1,0 +1,9 @@
+.block {
+	flex-grow: 1;
+
+	width: 100%;
+	padding: 1rem;
+
+	background: var(--black);
+	border: 1px solid var(--bg-l);
+}

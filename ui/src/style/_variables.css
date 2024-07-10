@@ -1,0 +1,68 @@
+:root {
+	--white: #ededff;
+	--black: #0f1125;
+	--red: #e2112e;
+	--hover: #e8fce4;
+	--bg-d: #333;
+	--bg: #737373;
+	--bg-l: #d4d4d4;
+	--text: #000;
+	--text-gray: #464444;
+	--text-l: #ededff;
+	--transition: all 0.35s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+	--max-width: 3000px;
+	--min-width: 300px;
+	--padding-block: 1.5rem;
+	--padding-inline: 3rem;
+	--border-radius: 10px;
+
+	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+	font-weight: 400;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	line-height: 1.5;
+	text-rendering: optimizelegibility;
+
+	font-synthesis: none;
+}
+
+/* {
+    "text-color-primary": "#ededff",
+    "focus-color": "#e2112e",
+    "base-background-color": "#333333",
+    "base-border": "1px solid #d4d4d4",
+    "base-border-radius": "4px",
+    "popup-border-radius": "4px",
+    "popup-image-container-background-color": "#aab4ba",
+    "base-checkbox-background-color": "#737373",
+    "base-checkbox-background-color-error": "#737373",
+    "base-checkbox-background-color-checked": "#5a7080",
+    "base-checkbox-check-mark-color": "#ededff",
+    "base-checkbox-border": "2px solid #ededff",
+    "base-checkbox-spin-color": "#ededff",
+    "popup-textinput-background-color": "#c7d0d6",
+    "popup-action-button-background-color": "#5a7080",
+    "popup-action-button-background-color-hover": "#485863"
+} */
+
+@media (max-width: 1280px) {
+	:root {
+		--padding-block: 1rem;
+		--padding-inline: 1.5rem;
+	}
+
+	a::after {
+		height: 2px;
+	}
+}
+
+@media (max-width: 768px) {
+	:root {
+		--padding-block: 0.3rem;
+		--padding-inline: 0.6rem;
+	}
+
+	a::after {
+		bottom: -1px;
+	}
+}
