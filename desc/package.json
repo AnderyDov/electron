@@ -3,14 +3,13 @@
 	"productName": "desc",
 	"version": "1.0.0",
 	"description": "My Electron application description",
-	"main": "src/index.js",
+	"main": "src/main.js",
 	"type": "module",
 	"scripts": {
 		"start": "electron-forge start",
 		"package": "electron-forge package",
 		"make": "electron-forge make",
-		"publish": "electron-forge publish",
-		"lint": "echo \"No linting configured\""
+		"publish": "electron-forge publish"
 	},
 	"devDependencies": {
 		"@electron-forge/cli": "^7.4.0",
@@ -21,7 +20,10 @@
 		"@electron-forge/plugin-auto-unpack-natives": "^7.4.0",
 		"@electron-forge/plugin-fuses": "^7.4.0",
 		"@electron/fuses": "^1.8.0",
-		"electron": "31.2.0"
+		"@eslint/js": "^9.7.0",
+		"electron": "31.2.0",
+		"eslint": "^8.57.0",
+		"globals": "^15.8.0"
 	},
 	"keywords": [],
 	"author": {

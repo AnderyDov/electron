@@ -5,5 +5,5 @@ import { dataState } from '../../store/atom';
 export function ShowData() {
 	const [data] = useRecoilState(dataState);
 
-	return <div className={styles.block}>{data}</div>;
+	return <pre className={styles.block}>{data}</pre>;
 }
