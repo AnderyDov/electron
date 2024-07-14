@@ -15,17 +15,59 @@ const createWindow = () => {
 	});
 
 	mainWindow.loadURL('http://localhost:4000');
+	('/home/andrey/.nvm');
 
 	mainWindow.setMenuBarVisibility(false);
 	// mainWindow.webContents.openDevTools();
 
-	ipcMain.handle('getData', async () => {
+	ipcMain.handle('getData', async function func() {
 		// let t = execSync('ls -ra', { cwd: homedir() }).toString().split('\n');
-		let t = fs.readdirSync(homedir());
-		for (let el of t) {
-			await new Promise(r => setTimeout(() => r(), 50));
-			mainWindow.webContents.send('lineDrow', el);
+
+		function func(path) {
+			let t = fs.readdirSync(path, { withFileTypes: true });
+			for (let i = 0; i < t.length; i++) {
+				// await new Promise(r => setTimeout(() => r(), 10));
+				if (t[i].name[0] !== '.' && !/\/\./.test(t[i].parentPath) && !/node_module/.test(t[i].parentPath)) {
+					let l = t[i].parentPath.split('/').length;
+					let str = '';
+					for (let k = 0; k < l; k++) {
+						str += '\t';
+					}
+					if (t[i].isDirectory()) {
+						mainWindow.webContents.send('lineDrow', `${str}${t[i].name}/`);
+						func(`${t[i].parentPath}/${t[i].name}`);
+					}
+					if (t[i].isFile()) {
+						mainWindow.webContents.send('lineDrow', `${str}${t[i].name}`);
+						// func(t[i]);
+					}
+				}
+			}
 		}
+
+		func(`${homedir()}/projects`);
+
+		// for (let i = 0; i < t.length; i++) {
+		// 	// await new Promise(r => setTimeout(() => r(), 10));
+		// 	if (t[i].name[0] !== '.' && !/\/\./.test(t[i].parentPath) && !/node_module/.test(t[i].parentPath)) {
+		// 		if (t[i].isDirectory()) {
+		// 			mainWindow.webContents.send('lineDrow', t[i].name);
+		// 		} else {
+		// 			mainWindow.webContents.send('lineDrow', t[i].name);
+		// 		}
+		// 	}
+		// }
+
+		// for (let el of t) {
+		// 	// await new Promise(r => setTimeout(() => r(), 10));
+		// 	if (el.name[0] !== '.' && !/\/\./.test(el.parentPath) && !/node_module/.test(el.parentPath)) {
+		// 		if (el.isFile()) {
+		// 			mainWindow.webContents.send('lineDrow', `\t${el.name}`);
+		// 		} else {
+		// 			mainWindow.webContents.send('lineDrow', `${el.name}/`);
+		// 		}
+		// 	}
+		// }
 	});
 };
 
