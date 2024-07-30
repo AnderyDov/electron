@@ -4,7 +4,6 @@ import svgr from 'vite-plugin-svgr';
 
 export default defineConfig({
 	build: {
-		target: 'es5',
 		outDir: 'dist',
 	},
 	base: '',
